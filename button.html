@@ -1,0 +1,40 @@
+<html>
+
+	<head>
+		<title>Audio!</title>
+		<script>
+		var clip = new Audio();
+		
+		function start()
+		{
+			clip.src = "shot.wav"
+			
+			clip.addEventListener("canplaythrough", doThisWhenAudioIsLoaded);
+			
+			clip.addEventListener("ended", doThisWhenAudioIsEnds);
+		}
+		function doThisWhenAudioIsLoaded()
+		{
+			alert("Audio Loaded!");
+			clip.play();
+		}
+		function doThisWhenAudioIsEnds()
+		{
+			alert("Audio done!");
+		}
+		</script>
+	</head>
+	
+	<body>
+		<div style="margin: auto; width 80%">
+			<input style="color: white; background: red; width: 200px; height: 75px;" type="button" value="Make Some Noise!" href="#" onclick="start();"></input>
+		</div>
+		
+		<br></br>
+		
+		<audio id="myAudio" controls>
+			<source src="shot.wav">
+		</audio>
+	</body>
+
+</html>
